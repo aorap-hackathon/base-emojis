@@ -1,2 +1,6 @@
-# base-emojis
-Onchain NFT Emojis on Base
+```
+npm install
+npm run dev
+```
+
+Head to http://localhost:5173/api
