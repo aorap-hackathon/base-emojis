@@ -73,7 +73,7 @@ app.transaction('/mint', async (c) => {
     let emoji = "";
     let name = "";
     if (inputText) {
-        let firstSpaceIndex = inputText.indexOf('-');
+        let firstSpaceIndex = inputText.indexOf('+');
         emoji = inputText.substring(0, firstSpaceIndex);
         name = inputText.substring(firstSpaceIndex + 1);
     }
