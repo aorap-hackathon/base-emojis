@@ -29,7 +29,7 @@ app.frame('/', (c) => {
           alignItems: 'center',
           background:
             status === 'response'
-              ? 'linear-gradient(to right, #432889, #17101F)'
+              ? 'linear-gradient(to right, white, yellow)'
               : 'white',
           backgroundSize: '100% 100%',
           display: 'flex',
@@ -54,7 +54,7 @@ app.frame('/', (c) => {
           }}
         >
           {status === 'response'
-            ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!` : ''}`
+            ? `Nice choice. ${fruit ? ` ${fruit.toUpperCase()}!` : ''}`
             : 'Base onchain NFT Emojis mint.\n\nEnter emoji plus custom name e.g 🙂+smile.'}
         </div>
       </div>
