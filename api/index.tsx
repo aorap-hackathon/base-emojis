@@ -44,7 +44,7 @@ app.frame('/', (c) => {
         <div
           style={{
             color: 'black',
-            fontSize: 60,
+            fontSize: status === 'response' ? 200 : 60,
             fontStyle: 'normal',
             letterSpacing: '-0.025em',
             lineHeight: 1.4,
@@ -54,7 +54,7 @@ app.frame('/', (c) => {
           }}
         >
           {status === 'response'
-            ? `Nice choice. ${fruit ? ` ${fruit.toUpperCase()}!` : ''}`
+            ? ((inputText && inputText.indexOf('+') !== -1) ? `Minted ${inputText.substring(0, inputText.indexOf('+'))}` : `Minted`)
             : 'Base onchain NFT Emojis mint.\n\nEnter emoji plus custom name e.g 🙂+smile.'}
         </div>
       </div>
@@ -62,6 +62,7 @@ app.frame('/', (c) => {
     intents: [
       <TextInput placeholder="Enter emoji+name" />,
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
+      <Button.Redirect location="https://warpcast.com/~/compose?text=%F0%9F%8E%89%F0%9F%94%A5+Check+out+these+Base+onchain+NFT+Emojis!+%F0%9F%8E%89%F0%9F%94%A5&embeds%5B%5D=base-emojis.vercel.app/api">Share</Button.Redirect>,
       status === 'response' && <Button.Reset>Reset</Button.Reset>,
     ],
   })
